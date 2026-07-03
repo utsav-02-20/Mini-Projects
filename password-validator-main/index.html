@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Password Validator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) minmax(420px, 520px) minmax(180px, 1fr);
+      grid-template-areas:
+        "top top top"
+        "left card right"
+        "bottom bottom bottom";
+      place-items: center;
+      gap: 24px;
+      padding: 24px;
+      align-content: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #a68989, #353535);
+      color: #e2e8f0;
+    }
+
+    .card {
+      grid-area: card;
+      width: min(92vw, 420px);
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      background: rgba(75, 85, 76, 0.9);
+      box-shadow: 0 20px 60px rgb(76, 74, 74);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 22px;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .input-box {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      outline: none;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+
+    input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+    }
+
+    .msg {
+      min-height: 18px;
+      font-size: 12px;
+      color: #fca5a5;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #94a3b8;
+      line-height: 1.4;
+    }
+
+    .rules {
+      display: grid;
+      gap: 4px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .ad-box {
+      width: min(500px, 100%);
+      padding: 100px;
+      border: 1px dashed #475569;
+      border-radius: 12px;
+      text-align: left;
+      font-size: 13px;
+      color: #cbd5e1;
+      background: rgba(15, 23, 42, 0.55);
+      display: grid;
+      gap: 8px;
+    }
+
+    .ad-tag {
+      width: fit-content;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #38bdf8;
+      color: #082f49;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .ad-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .ad-text {
+      color: #94a3b8;
+      line-height: 1.4;
+    }
+
+    .ad-cta {
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #e2e8f0;
+      color: #0f172a;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    #ad-top {
+      grid-area: top;
+      justify-self: center;
+      align-self: start;
+    }
+
+    #ad-left {
+      grid-area: left;
+      justify-self: end;
+      align-self: center;
+    }
+
+    #ad-right {
+      grid-area: right;
+      justify-self: start;
+      align-self: center;
+    }
+
+    #ad-bottom {
+      grid-area: bottom;
+      justify-self: center;
+      align-self: end;
+    }
+
+    button {
+      margin-top: 4px;
+      padding: 14px;
+      border: 0;
+      border-radius: 12px;
+      background: #38bdf8;
+      color: #082f49;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "top"
+          "left"
+          "card"
+          "right"
+          "bottom";
+      }
+
+      #ad-top,
+      #ad-left,
+      #ad-right,
+      #ad-bottom {
+        justify-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- <div id="ad-top" class="ad-box">
+    <div class="ad-tag">Feature</div>
+    <div class="ad-title">Email Check</div>
+    <div class="ad-text">Instantly verifies format and helps catch bad entries early.</div>
+    <div class="ad-cta">Enabled</div>
+  </div> -->
+
+  <!-- <div id="ad-left" class="ad-box">
+    <div class="ad-tag">Feature</div>
+    <div class="ad-title">Password Rules</div>
+    <div class="ad-text">Supports length, uppercase, lowercase, number, and symbol checks.</div>
+    <div class="ad-cta">Active</div>
+  </div> -->
+
+  <div class="card">
+    <h1>Login Validator</h1>
+    <p>Enter your email and password. JavaScript can validate the fields using the IDs below.</p>
+
+    <form id="myform" autocomplete="off">
+      <div class="field">
+        <label for="email">Email</label>
+        <div class="input-box">
+          <input id="email" type="email" placeholder="Enter your email">
+        </div>
+        <div class="msg" id="email-error"></div>
+      </div>
+
+      <div class="field">
+        <label for="pass">Password</label>
+        <div class="input-box">
+          <input id="pass" type="password" placeholder="Enter your password">
+        </div>
+        <div class="msg" id="pass-error"></div>
+        <div class="rules">
+          <div>Use 8+ characters</div>
+          <div>Include uppercase, lowercase, number, and symbol</div>
+        </div>
+      </div>
+
+      <button type="submit">Validate</button>
+    </form>
+
+  </div>
+
+  <!-- <div id="ad-right" class="ad-box">
+    <div class="ad-tag">Feature</div>
+    <div class="ad-title">Live Feedback</div>
+    <div class="ad-text">Shows clear error messages beside each field while typing.</div>
+    <div class="ad-cta">Ready</div>
+  </div> -->
+
+  <!-- <div id="ad-bottom" class="ad-box">
+    <div class="ad-tag">Feature</div>
+    <div class="ad-title">Responsive Layout</div>
+    <div class="ad-text">Keeps the validator centered and balanced on all screen sizes.</div>
+    <div class="ad-cta">Built In</div>
+  </div> -->
+
+  <script src="script_pro.js"></script>
+</body>
+</html>

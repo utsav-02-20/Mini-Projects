@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --panel: rgba(255, 255, 255, 0.72);
+            --text: #1f2937;
+            --muted: #5b6472;
+            --accent: #d95d39;
+            --accent-dark: #b44728;
+            --line: rgba(31, 41, 55, 0.12);
+            --shadow: 0 24px 60px rgba(52, 39, 24, 0.16);
+        }
+
+        body.dark {
+            --panel: rgba(20, 27, 38, 0.76);
+            --text: #f3f4f6;
+            --muted: #b6c0cf;
+            --accent: #f59e0b;
+            --accent-dark: #d97706;
+            --line: rgba(255, 255, 255, 0.1);
+            --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Space Grotesk", sans-serif;
+            background:
+                radial-gradient(circle at top left, #ffd9c8 0, transparent 34%),
+                radial-gradient(circle at bottom right, #f6c88f 0, transparent 28%),
+                linear-gradient(135deg, #f7f2ea 0%, #efe5d8 100%);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            display: grid;
+            place-items: center;
+            padding: 32px 20px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark {
+            background:
+                radial-gradient(circle at top left, rgba(245, 158, 11, 0.18) 0, transparent 30%),
+                radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.16) 0, transparent 26%),
+                linear-gradient(135deg, #0f172a 0%, #111827 100%);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: var(--accent);
+            color: #fff;
+            padding: 14px 22px;
+            border-radius: 999px;
+            font: inherit;
+            font-weight: 700;
+            transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            width: min(92%, 1180px);
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 18px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .hero-copy,
+        .description-panel {
+            background: var(--panel);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-copy {
+            padding: 56px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(217, 93, 57, 0.12);
+            color: var(--accent-dark);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.05em;
+            margin-bottom: 18px;
+            max-width: 9ch;
+        }
+
+        .lead {
+            font-size: 1.08rem;
+            color: var(--muted);
+            max-width: 58ch;
+            margin-bottom: 28px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--line);
+        }
+
+        .secondary:hover {
+            background: rgba(255, 255, 255, 0.65);
+        }
+
+        body.dark .secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .description-panel {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .panel-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .description-panel h2 {
+            font-size: 1.8rem;
+            line-height: 1.05;
+            margin: 10px 0 12px;
+        }
+
+        .description-panel p {
+            color: var(--muted);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .stat {
+            padding: 16px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--line);
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-copy {
+                padding: 36px 28px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: clamp(2.4rem, 14vw, 4rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <button id="themeToggle" class="secondary" type="button">Dark Theme</button>
+        </div>
+
+        <main class="hero">
+            <section class="hero-copy">
+                <span class="eyebrow">Fresh Design</span>
+                <h1>Build something people want to explore.</h1>
+                <p class="lead">
+                    A cleaner landing page with warmer colors, stronger typography, and a dedicated description panel to make your project feel polished from the first glance.
+                </p>
+                <div class="actions">
+                    <button id="getStartedBtn" type="button">Get Started</button>
+                    <button class="secondary" type="button">Learn More</button>
+                </div>
+            </section>
+
+            <aside class="description-panel">
+                <div>
+                    <span class="panel-label">Description Panel</span>
+                    <h2>Designed to explain the idea at a glance.</h2>
+                    <p>
+                        A collection of mini web development projects built using HTML, CSS, JavaScript, React, and other modern technologies. Each project is accessible from a single website, showcasing different concepts, UI designs, and practical implementations.
+                    </p>
+                </div>
+
+                <!-- <div class="stats">
+                    <div class="stat">
+                        <strong>01</strong>
+                        <span>Clean layout</span>
+                    </div>
+                    <div class="stat">
+                        <strong>02</strong>
+                        <span>Soft glass panel</span>
+                    </div>
+                    <div class="stat">
+                        <strong>03</strong>
+                        <span>Mobile friendly</span>
+                    </div>
+                </div> -->
+            </aside>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

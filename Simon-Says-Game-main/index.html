@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Says Game</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #212121;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        color: white;
+        padding-top: 30px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    .btn-container {
+        display: grid;
+        grid-template-columns: repeat(2, 180px);
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 180px;
+        height: 180px;
+        border: 6px solid black;
+        border-radius: 20px;
+        font-size: 2rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .red {
+        background-color: #d95980;
+    }
+
+    .blue {
+        background-color: #63aac0;
+    }
+
+    .yellow {
+        background-color: #f99b45;
+    }
+
+    .green {
+        background-color: #819ff9;
+    }
+
+    .flash {
+        background-color: white !important;
+    }
+
+    /* User Click Effect */
+    .userflash {
+        background-color: limegreen !important;
+    }
+
+    .help {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    color: black;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tooltip {
+    position: absolute;
+    top: 50px;
+    right: 0;
+
+    width: 280px;
+    padding: 15px;
+
+    background: #333;
+    color: white;
+
+    border-radius: 10px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.help:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+  </style>
+</head>
+<body>
+  <h1>Simon Says Game</h1>
+  <h2>Press any key / Tap on display to start</h2>
+  <br>
+  <div class = "btn-container">
+    <div class="btn red">1</div>
+    <div class="btn blue">2</div>
+    <div class="btn yellow">3</div>
+    <div class="btn green">4</div>
+  </div>
+
+  <div class="help">
+    ?
+    <div class="tooltip">
+        <h3>How to Play</h3>
+            <p>
+                1. Press any key to start the game.<br>
+                2. Watch the button that flashes.<br>
+                3. Click the same button.<br>
+                4. Each level adds one new color to the sequence.<br>
+                5. Repeat the entire sequence correctly.<br>
+                6. One wrong click ends the game.
+            </p>
+        </div>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
