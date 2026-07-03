@@ -1,87 +1,39 @@
 # 🚀 Web Development Projects
 
-A collection of web development projects built using **HTML, CSS, JavaScript, React, Node.js, Express, MongoDB**, and other modern technologies. This repository serves as a central hub for all my mini projects, experiments, and portfolio applications, all hosted from a single repository under one domain.
+A collection of my web development projects built while learning and exploring different technologies. This repository contains mini projects, UI components, and web applications, all organized in one place.
 
 ## 🌐 Live Demo
 
-> **Homepage:** `https://your-domain.com`
+**Homepage:** `https://your-domain.com`
 
-Each project is available at:
+## 📂 Projects
 
-* `/calculator`
-* `/todo-app`
-* `/weather-app`
-* `/simon-game`
-* `/tic-tac-toe`
-* `/...`
+* Calculator
+* Simon Says Game
+* To-Do App
+* Password Validator
+* Weather App
+* More projects coming soon...
 
-## 📂 Repository Structure
-
-```text
-web-projects/
-│── index.html              # Homepage
-│── README.md
-│
-├── calculator/
-├── todo-app/
-├── weather-app/
-├── simon-game/
-├── tic-tac-toe/
-├── ...
-```
-
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
 * HTML5
 * CSS3
-* JavaScript (ES6+)
-* React
-* Node.js
-* Express.js
-* MongoDB
+* JavaScript
+* React (for selected projects)
 * Git & GitHub
 
-## ✨ Features
-
-* Multiple projects in a single repository
-* Hosted under one domain
-* Responsive designs
-* Clean folder structure
-* Easy navigation through a central homepage
-* Regularly updated with new projects
-
-## 🚀 Running Locally
-
-1. Clone the repository:
+## 🚀 Run Locally
 
 ```bash
-git clone https://github.com/your-username/web-projects.git
+git clone https://github.com/your-username/web-development-projects.git
+cd web-development-projects
 ```
 
-2. Open the project folder:
+Then open `index.html` or run the desired project using Live Server.
 
-```bash
-cd web-projects
-```
+## 📌 Note
 
-3. Open `index.html` in your browser, or use a local development server such as Live Server.
+This repository is regularly updated as I build and learn new web development concepts.
 
-## 📌 Future Plans
-
-* Add more frontend and full-stack projects
-* Improve UI/UX across all projects
-* Integrate APIs and authentication
-* Optimize performance and accessibility
-* Expand documentation for each project
-
-## 🤝 Contributions
-
-Suggestions and feedback are always welcome. Feel free to open an issue or submit a pull request.
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-⭐ If you found this repository useful, consider giving it a **Star**!
+⭐ Feel free to explore the projects and share your feedback!
